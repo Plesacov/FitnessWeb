@@ -1,0 +1,17 @@
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.csproj.AssemblyReference.cache
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.AssemblyInfoInputs.cache
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.AssemblyInfo.cs
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.csproj.CoreCompileInputs.cache
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\bin\Debug\net6.0\Fitness.Infrastracture.deps.json
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\bin\Debug\net6.0\Fitness.Infrastracture.runtimeconfig.json
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\bin\Debug\net6.0\Fitness.Infrastracture.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\bin\Debug\net6.0\ref\Fitness.Infrastracture.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\bin\Debug\net6.0\Fitness.Infrastracture.pdb
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\bin\Debug\net6.0\Fitness.Core.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\bin\Debug\net6.0\Fitness.Core.pdb
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.csproj.CopyComplete
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\ref\Fitness.Infrastracture.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.pdb
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Infrastracture\obj\Debug\net6.0\Fitness.Infrastracture.genruntimeconfig.cache

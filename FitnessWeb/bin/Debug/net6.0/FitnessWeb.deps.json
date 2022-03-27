@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FitnessWeb/1.0.0": {
+        "dependencies": {
+          "UmbracoCms.Core": "8.18.0"
+        },
+        "runtime": {
+          "FitnessWeb.dll": {}
+        }
+      },
+      "UmbracoCms.Core/8.18.0": {
+        "runtime": {
+          "lib/net472/Umbraco.Core.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.18.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FitnessWeb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UmbracoCms.Core/8.18.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1B3dhen0Vwcn7agjCpEXHxNJ8x6rl7d6HIZxyY1epSk+etjzeoT0yBBsQgwRepl/wAuZFjDBp+dRsvF5t6UYkA==",
+      "path": "umbracocms.core/8.18.0",
+      "hashPath": "umbracocms.core.8.18.0.nupkg.sha512"
+    }
+  }
+}

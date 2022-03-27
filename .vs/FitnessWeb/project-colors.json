@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "85c2b2bd-6134-49dc-8bea-5bc11b7c7687": {
+      "ProjectGuid": "85c2b2bd-6134-49dc-8bea-5bc11b7c7687",
+      "DisplayName": "Fitness.Core",
+      "ColorIndex": 0
+    },
+    "8789841f-74a0-46c9-b6d4-08646fecf56e": {
+      "ProjectGuid": "8789841f-74a0-46c9-b6d4-08646fecf56e",
+      "DisplayName": "Fitness.API",
+      "ColorIndex": 1
+    },
+    "2d276a51-4972-4b94-b841-3fa7017bd12c": {
+      "ProjectGuid": "2d276a51-4972-4b94-b841-3fa7017bd12c",
+      "DisplayName": "Fitness.Infrastracture",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "99d1a8b6-8fe0-4610-9eb3-71864f9b9246": {
+      "ProjectGuid": "99d1a8b6-8fe0-4610-9eb3-71864f9b9246",
+      "DisplayName": "FitnessWeb.API",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

@@ -1,0 +1,17 @@
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\bin\Debug\net6.0\FitnessWeb.exe
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\bin\Debug\net6.0\FitnessWeb.deps.json
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\bin\Debug\net6.0\FitnessWeb.runtimeconfig.json
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\bin\Debug\net6.0\FitnessWeb.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\bin\Debug\net6.0\ref\FitnessWeb.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\bin\Debug\net6.0\FitnessWeb.pdb
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\bin\Debug\net6.0\Umbraco.Core.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.csproj.AssemblyReference.cache
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.AssemblyInfoInputs.cache
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.AssemblyInfo.cs
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.csproj.CoreCompileInputs.cache
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.csproj.CopyComplete
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\ref\FitnessWeb.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.pdb
+C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\FitnessWeb.genruntimeconfig.cache
