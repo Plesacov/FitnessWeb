@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "V9VMWryKT0/uVsyW0TuyLOGufxjE8F7T9mMWEXVgJufSKX0NDvxdhYzDpiXjuJhynTIaSkQiBITd4KXLUVoDbA==",
+  "dgSpecHash": "TZYanX4GjV7VdXUzGE275d0O3BniYBvekERQZn01VTxU0sJADgM0v2s6Ukgc/3kU468+Sk4F89LPo2RM93wzUw==",
   "success": true,
   "projectFilePath": "C:\\Users\\tarza\\GITTestRepo\\FitnessWeb\\FitnessWeb.API\\FitnessWeb.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tarza\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\tarza\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\tarza\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\tarza\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\tarza\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\tarza\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\tarza\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\tarza\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
