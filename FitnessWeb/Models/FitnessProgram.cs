@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,11 +10,10 @@ namespace FitnessWeb.Models
 {
     public class FitnessProgram : BaseEntity
     {
-        [Required]
-        [MaxLength(20)]
-        public string Type { get; set; } // change enum <--
         public List<Training> Trainings { get; set; }
         public List<FitnessTip> FitnessTips { get; set; }
         public List<PersonFitnessProgram> PersonFitnessPrograms { get; set; }
+        public FitnessType FitnessType { get; set; }
+        public int FitnessTypeId { get; set; }
     }
 }

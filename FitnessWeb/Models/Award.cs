@@ -17,5 +17,6 @@ namespace FitnessWeb.Models
         public string Type { get; set; }
         public Achievement Achievement { get; set; }
         public int AchievementId { get; set; }
+        public byte[] Timestamp { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FitnessWeb.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Fitness.Infrastracture
 {
@@ -17,6 +18,23 @@ namespace Fitness.Infrastracture
             this._context = _context;
             table = _context.Set<T>();
         }
+
+        public IEnumerable<T> GetWithInclude(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] paths)
+        {
+            IQueryable<T> queryable = this.table.Where(predicate);
+            if (paths != null)
+            {
+                queryable = paths.Aggregate(queryable, (current, path) => current.Include(path));
+            }
+            return queryable.AsEnumerable();
+        }
+
+        public IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate)
+        {
+            IQueryable<T> queryable = this.table.Where(predicate);
+            return queryable.AsEnumerable();
+        }
+
         public IEnumerable<T> GetAll()
         {
             return table.ToList();

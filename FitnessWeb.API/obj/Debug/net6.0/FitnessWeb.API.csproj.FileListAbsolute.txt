@@ -15,7 +15,6 @@ C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb.API\obj\Debug\net6.0\FitnessWeb
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb.API\obj\Debug\net6.0\FitnessWeb.API.AssemblyInfoInputs.cache
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb.API\obj\Debug\net6.0\FitnessWeb.API.AssemblyInfo.cs
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb.API\obj\Debug\net6.0\FitnessWeb.API.csproj.CoreCompileInputs.cache
-C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb.API\obj\Debug\net6.0\FitnessWeb.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb.API\obj\Debug\net6.0\FitnessWeb.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb.API\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb.API\obj\Debug\net6.0\staticwebassets.development.json
