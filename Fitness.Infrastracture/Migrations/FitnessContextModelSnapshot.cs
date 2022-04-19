@@ -49,14 +49,17 @@ namespace Fitness.Infrastracture.Migrations
 
             modelBuilder.Entity("Fitness.Core.Models.FitnessType", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("FitnessProgramId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FitnessProgramId"), 1L, 1);
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("FitnessProgramId")
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -70,7 +73,7 @@ namespace Fitness.Infrastracture.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
 
-                    b.HasKey("Id");
+                    b.HasKey("FitnessProgramId");
 
                     b.ToTable("FitnessType");
                 });
@@ -174,6 +177,9 @@ namespace Fitness.Infrastracture.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FitnessTypeId")
+                        .IsUnique();
 
                     b.ToTable("FitnessProgram");
                 });
@@ -310,17 +316,6 @@ namespace Fitness.Infrastracture.Migrations
                     b.ToTable("Training");
                 });
 
-            modelBuilder.Entity("Fitness.Core.Models.FitnessType", b =>
-                {
-                    b.HasOne("FitnessWeb.Models.FitnessProgram", "FitnessProgram")
-                        .WithOne("FitnessType")
-                        .HasForeignKey("Fitness.Core.Models.FitnessType", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FitnessProgram");
-                });
-
             modelBuilder.Entity("FitnessWeb.Models.Achievement", b =>
                 {
                     b.HasOne("FitnessWeb.Models.Person", "Person")
@@ -352,6 +347,17 @@ namespace Fitness.Infrastracture.Migrations
                         .IsRequired();
 
                     b.Navigation("Training");
+                });
+
+            modelBuilder.Entity("FitnessWeb.Models.FitnessProgram", b =>
+                {
+                    b.HasOne("Fitness.Core.Models.FitnessType", "FitnessType")
+                        .WithOne("FitnessProgram")
+                        .HasForeignKey("FitnessWeb.Models.FitnessProgram", "FitnessTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FitnessType");
                 });
 
             modelBuilder.Entity("FitnessWeb.Models.FitnessTip", b =>
@@ -399,6 +405,12 @@ namespace Fitness.Infrastracture.Migrations
                     b.Navigation("FitnessProgram");
                 });
 
+            modelBuilder.Entity("Fitness.Core.Models.FitnessType", b =>
+                {
+                    b.Navigation("FitnessProgram")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("FitnessWeb.Models.Achievement", b =>
                 {
                     b.Navigation("Awards");
@@ -409,9 +421,6 @@ namespace Fitness.Infrastracture.Migrations
             modelBuilder.Entity("FitnessWeb.Models.FitnessProgram", b =>
                 {
                     b.Navigation("FitnessTips");
-
-                    b.Navigation("FitnessType")
-                        .IsRequired();
 
                     b.Navigation("PersonFitnessPrograms");
 

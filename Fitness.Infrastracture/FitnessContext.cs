@@ -80,11 +80,12 @@ namespace Fitness.Infrastracture
                 .IsRequired();
 
            //one-to-one
+            modelBuilder.Entity<FitnessType>()
+                .HasKey(s => s.FitnessProgramId);
+
             modelBuilder.Entity<FitnessProgram>()
                 .HasOne(x => x.FitnessType)
-                .WithOne(x => x.FitnessProgram)
-                .HasForeignKey<FitnessType>(x => x.Id)
-                .OnDelete(DeleteBehavior.Cascade);
+                .WithOne(x => x.FitnessProgram);
 
             //Concurrency
             modelBuilder.Entity<Award>()

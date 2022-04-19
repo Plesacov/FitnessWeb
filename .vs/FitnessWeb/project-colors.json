@@ -25,7 +25,37 @@
       "ProjectGuid": "99d1a8b6-8fe0-4610-9eb3-71864f9b9246",
       "DisplayName": "FitnessWeb.API",
       "ColorIndex": 3
+    },
+    "67983b8e-d066-4e83-a6e6-30e099a7b18f": {
+      "ProjectGuid": "67983b8e-d066-4e83-a6e6-30e099a7b18f",
+      "DisplayName": "WebApplication1",
+      "ColorIndex": 4
+    },
+    "eff923d9-fb56-4291-ab0a-0b47da587c50": {
+      "ProjectGuid": "eff923d9-fb56-4291-ab0a-0b47da587c50",
+      "DisplayName": "WebApplication2",
+      "ColorIndex": 5
+    },
+    "2577f6dc-d1b3-40dc-a8f7-be5422004245": {
+      "ProjectGuid": "2577f6dc-d1b3-40dc-a8f7-be5422004245",
+      "DisplayName": "Project1",
+      "ColorIndex": 6
+    },
+    "6c912c50-31a7-4e0a-bca6-4a7f722cdf7e": {
+      "ProjectGuid": "6c912c50-31a7-4e0a-bca6-4a7f722cdf7e",
+      "DisplayName": "WebApplication3",
+      "ColorIndex": 7
+    },
+    "d45a6191-d6ae-4ba7-a659-a162f779618a": {
+      "ProjectGuid": "d45a6191-d6ae-4ba7-a659-a162f779618a",
+      "DisplayName": "WebApplication4",
+      "ColorIndex": 8
+    },
+    "0c0a266a-1f35-4c80-885a-a7be117356f0": {
+      "ProjectGuid": "0c0a266a-1f35-4c80-885a-a7be117356f0",
+      "DisplayName": "Fitness.Tests",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 10
 }

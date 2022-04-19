@@ -5,13 +5,15 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fitness.Core", "FitnessWeb\Fitness.Core.csproj", "{85C2B2BD-6134-49DC-8BEA-5BC11B7C7687}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Infrastracture", "Fitness.Infrastracture\Fitness.Infrastracture.csproj", "{2D276A51-4972-4B94-B841-3FA7017BD12C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fitness.Infrastracture", "Fitness.Infrastracture\Fitness.Infrastracture.csproj", "{2D276A51-4972-4B94-B841-3FA7017BD12C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessWeb.API", "FitnessWeb.API\FitnessWeb.API.csproj", "{99D1A8B6-8FE0-4610-9EB3-71864F9B9246}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessWeb.API", "FitnessWeb.API\FitnessWeb.API.csproj", "{99D1A8B6-8FE0-4610-9EB3-71864F9B9246}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0C2CC54E-DFA1-430E-BF56-9349835B6FF2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{D786056A-21D0-495A-9167-CB1BFE3B52A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Tests", "Fitness.Tests\Fitness.Tests.csproj", "{0C0A266A-1F35-4C80-885A-A7BE117356F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{99D1A8B6-8FE0-4610-9EB3-71864F9B9246}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99D1A8B6-8FE0-4610-9EB3-71864F9B9246}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99D1A8B6-8FE0-4610-9EB3-71864F9B9246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C0A266A-1F35-4C80-885A-A7BE117356F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C0A266A-1F35-4C80-885A-A7BE117356F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C0A266A-1F35-4C80-885A-A7BE117356F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C0A266A-1F35-4C80-885A-A7BE117356F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{85C2B2BD-6134-49DC-8BEA-5BC11B7C7687} = {D786056A-21D0-495A-9167-CB1BFE3B52A8}
 		{2D276A51-4972-4B94-B841-3FA7017BD12C} = {D786056A-21D0-495A-9167-CB1BFE3B52A8}
 		{99D1A8B6-8FE0-4610-9EB3-71864F9B9246} = {D786056A-21D0-495A-9167-CB1BFE3B52A8}
+		{0C0A266A-1F35-4C80-885A-A7BE117356F0} = {0C2CC54E-DFA1-430E-BF56-9349835B6FF2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {258359AA-3C95-4E4F-B570-1F2C914605CD}
