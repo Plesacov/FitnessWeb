@@ -18,7 +18,7 @@ export class FitnessProgramService{
         return this.httpService.put<any>("/api/fitnessPrograms/updateNewProgram", command);
     }
 
-    getById(id: number): Observable<FitnessProgramViewModel>{
+    getById(id: any): Observable<FitnessProgramViewModel>{
         return this.httpService.get<FitnessProgramViewModel>(`/api/fitnessPrograms/getById/${id}`);
     }
 }

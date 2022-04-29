@@ -15,13 +15,9 @@ export class AppComponent {
     {name: 'Sign In', routerLink: '/signin'},
     {name: 'Sign Up', routerLink: '/signup'},
     {name: 'About', routerLink: '/about'}];
-  fitnessProgram!: Observer<FitnessProgramViewModel>;
+  fitnessProgram!: FitnessProgramViewModel;
   title = 'AngularApp';
-  constructor(private fitnessService: FitnessProgramService){
-    this.getProgramById();
+  constructor(){
   }
 
-  public getProgramById = () => {
-    this.fitnessService.getById(17).subscribe(this.fitnessProgram);
-  }
 }

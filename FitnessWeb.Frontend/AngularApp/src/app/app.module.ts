@@ -13,12 +13,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialExampleModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FitnessProgramComponent } from './components/fitness-program/fitness-program.component';
+import { FitnessProgramResolver } from './components/fitness-program/fitness-program.resolve';
 
 @NgModule({
   declarations: [
     AppComponent,
     HoverMenuComponent,
     NavBarComponent,
+    FitnessProgramComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -30,7 +33,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [FitnessProgramService],
+  providers: [FitnessProgramService,FitnessProgramResolver],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
