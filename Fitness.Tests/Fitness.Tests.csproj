@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="QueryHandlers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Fitness.Infrastracture\Fitness.Infrastracture.csproj" />
     <ProjectReference Include="..\FitnessWeb.API\FitnessWeb.API.csproj" />
   </ItemGroup>

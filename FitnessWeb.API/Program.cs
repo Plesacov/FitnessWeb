@@ -11,6 +11,15 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("http://example.com",
+                                "http://www.contoso.com");
+        });
+});
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(typeof(Program).Assembly, typeof(FitnessMapperProfile).Assembly);
 builder.Services.AddMediatR(typeof(FitnessProgramQueryHandler).Assembly);
@@ -33,6 +42,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 app.UseHttpsRedirection();
 

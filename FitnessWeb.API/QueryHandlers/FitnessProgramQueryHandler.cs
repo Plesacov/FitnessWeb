@@ -22,7 +22,7 @@ namespace FitnessWeb.API.QueryHandlers
                 .GetWithInclude(x => x.FitnessType.Name.Contains(request.SearchTerm),
                                     x => x.Trainings,
                                     x => x.FitnessTips,
-                                    x => x.FitnessType);
+                                    x => x.FitnessType).ToList();
             var result = mapper.Map<List<FitnessProgramViewModel>>(fitnessPrograms);
             return Task.FromResult(result);
         }

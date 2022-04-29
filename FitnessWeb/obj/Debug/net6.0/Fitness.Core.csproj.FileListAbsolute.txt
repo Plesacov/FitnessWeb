@@ -11,4 +11,3 @@ C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\Fitness.Core.d
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\ref\Fitness.Core.dll
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\Fitness.Core.pdb
 C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\Fitness.Core.genruntimeconfig.cache
-C:\Users\tarza\GITTestRepo\FitnessWeb\FitnessWeb\obj\Debug\net6.0\Fitness.Core.csproj.AssemblyReference.cache

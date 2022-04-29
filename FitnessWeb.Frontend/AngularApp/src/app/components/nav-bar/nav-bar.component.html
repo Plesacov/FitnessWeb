@@ -1,0 +1,28 @@
+<div class="nav-bar">
+    <mat-toolbar>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <!-- #docregion mat-menu-trigger-for -->
+            <mat-icon mat-button [matMenuTriggerFor]="menu">menu</mat-icon>
+            <!-- #enddocregion mat-menu-trigger-for -->
+            <mat-menu #menu="matMenu">
+                <button routerLink="{{item.routerLink}}" mat-menu-item *ngFor="let item of links">
+                    {{ item.name }}
+                </button>
+            </mat-menu>
+        </button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" routerLink="/home">home</mat-icon>
+        <span class="example-spacer"></span>
+        <div class="links">
+            <nav style="display: flex;">
+                <hover-menu></hover-menu>
+            </nav>
+        </div>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+</div>
+<home-page></home-page>

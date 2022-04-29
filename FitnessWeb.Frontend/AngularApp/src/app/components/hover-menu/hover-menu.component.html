@@ -1,0 +1,28 @@
+<button style="font-size: larger;" mat-button [matMenuTriggerFor]="animals">Person</button>
+
+<mat-menu #animals="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="man">Man</button>
+    <button mat-menu-item [matMenuTriggerFor]="woman">Woman</button>
+    <button mat-menu-item [matMenuTriggerFor]="child">Child</button>
+</mat-menu>
+
+<mat-menu #man="matMenu">
+    <button mat-menu-item>Tabata 30'</button>
+    <button mat-menu-item>Power Program</button>
+    <button mat-menu-item>Football Program</button>
+    <button mat-menu-item>CrossFit</button>
+</mat-menu>
+
+<mat-menu #woman="matMenu">
+    <button mat-menu-item>Running</button>
+    <button mat-menu-item>Dance Mix</button>
+    <button mat-menu-item>Pilates</button>
+    <button mat-menu-item>Stretching</button>
+</mat-menu>
+
+<mat-menu #child="matMenu">
+    <button mat-menu-item>Super ABS</button>
+    <button mat-menu-item>Taekwondo</button>
+    <button mat-menu-item>TRX</button>
+    <button mat-menu-item>Swimming</button>
+</mat-menu>

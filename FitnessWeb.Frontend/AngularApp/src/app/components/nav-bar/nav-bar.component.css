@@ -1,0 +1,25 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  color: rgb(0, 0, 0);
+}
+
+.nav-bar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.links{
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a{
+  margin-left: 15px;
+}
