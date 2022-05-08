@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 
 @Component({
   selector: 'hover-menu',
@@ -16,9 +16,12 @@ export class HoverMenuComponent implements OnInit {
 
   reloadComponent() {
     let currentUrl = this.route.url;
+    let urlSegments: UrlSegment[] = [];
+    currentUrl.forEach(x => x.map(y => urlSegments.push(y)));
+      if(urlSegments[0] !== undefined){
         this.router.routeReuseStrategy.shouldReuseRoute = () => false;
         this.router.onSameUrlNavigation = 'reload';
         this.router.navigate([currentUrl]);
-    }
-
+      }
+  }
 }

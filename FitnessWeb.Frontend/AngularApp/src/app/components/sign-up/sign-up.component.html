@@ -3,33 +3,75 @@
 <div class="modal-body">
     <h4 class="card-header">Sign Up</h4>
     <div class="card-body">
-        <form>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" formControlName="username" class="form-control" />
-                <div class="invalid-feedback">
-                    <div>Username is required</div>
+        <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
+            <div class="form-group row">
+                <label for="firstName" class="col-form-label">First Name:</label>
+                <input type="text" id="firstName" formControlName="firstName" class="form-control" />
+                <div class="col-md-5">
+                    <em *ngIf="validateControl('firstName') && hasError('firstName', 'required')">First Name is
+                        required</em>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="username">Email</label>
-                <input type="text" formControlName="email" class="form-control" />
-                <div class="invalid-feedback">
-                    <div>Email is required</div>
+            <div class="form-group row">
+                <label for="lastName" class="col-form-label">Last Name:</label>
+                <input type="text" id="lastName" formControlName="lastName" class="form-control" />
+                <div class="col-md-5">
+                    <em *ngIf="validateControl('lastName') && hasError('lastName', 'required')">Last Name is
+                        required</em>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" formControlName="password" class="form-control" />
-                <div class="invalid-feedback">
-                    <div>Password is required</div>
+            <div class="form-group row">
+                <label for="email" class="col-form-label">Email:</label>
+                <input type="email" id="email" formControlName="email" class="form-control" />
+                <em *ngIf="validateControl('email') && hasError('email', 'email')">Please provide a valid email</em>
+                <em *ngIf="validateControl('email') && hasError('email', 'required')">Email is required</em>
+            </div>
+            <mat-form-field class="form-group row">
+                <label for="email" class="col-form-label">Birthdate:</label>
+                <input matInput class="form-control" [matDatepicker]="picker" [max]="maxDate" name="birthdate" required
+                    type="birthdate" id="birthdate" formControlName="birthdate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <em *ngIf="validateControl('birthdate') && hasError('birthdate', 'required')">Birthdate is required</em>
+            </mat-form-field>
+
+            <div class="form-group row">
+                <label for="weight" class="col-form-label">Weight:</label>
+                <input type="number" id="weight" formControlName="weight" class="form-control" />
+                <em *ngIf="validateControl('weight') && hasError('weight', 'weight')">Please provide a valid weight</em>
+                <em *ngIf="validateControl('weight') && hasError('weight', 'required')">Weight is required</em>
+            </div>
+
+            <div class="form-group row">
+                <label for="height" class="col-form-label">Height:</label>
+                <input type="number" id="height" formControlName="height" class="form-control" />
+                <em *ngIf="validateControl('height') && hasError('height', 'height')">Please provide a valid height</em>
+                <em *ngIf="validateControl('height') && hasError('height', 'required')">Height is required</em>
+            </div>
+
+            <div class="form-group row">
+                <label for="password" class="col-form-label">Password:</label>
+                <input type="password" id="password" formControlName="password" class="form-control" />
+                <div class="col-md-5">
+                    <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is
+                        required</em>
                 </div>
             </div>
-            <div class="form-group">
-                <button class="btn btn-outline-dark">
-                    Sign Up
-                </button>
-                <button (click)="redirectToSignIn()" class="btn btn-light">Sign In</button>
+            <div class="form-group row">
+                <label for="confirm" class="col-form-labe">Confirm Password:</label>
+                <input type="password" id="confirm" formControlName="confirm" class="form-control" />
+                <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">Confirm password is
+                    required</em>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div class="col-md-1">
+                    <mat-checkbox class="mdc-checkbox__native-control" name="agree" required color="primary">Agree to Terms and Conditions.
+                    </mat-checkbox>
+                    <button type="submit" class="btn btn-outline-dark"
+                        [disabled]="!registerForm.valid">Register</button>
+                </div>
             </div>
         </form>
+    </div>
 </div>

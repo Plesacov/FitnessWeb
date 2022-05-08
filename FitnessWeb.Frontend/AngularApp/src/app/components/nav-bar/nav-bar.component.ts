@@ -1,4 +1,6 @@
 import {  Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthenticationService } from 'src/services/authentication.service';
 
 @Component({
   selector: 'nav-bar',
@@ -8,10 +10,14 @@ import {  Component, Input, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
   @Input() links!: Link[];
 
-  constructor() {
+  constructor(private _authService: AuthenticationService) {
   }
   ngOnInit(): void {
 
+  }
+
+  logout(): void {
+    this._authService.logOut('/api/accounts/logout');
   }
 }
 
@@ -19,5 +25,6 @@ interface Link{
   name: string,
   routerLink: string
 }
+
 
 export {Link}

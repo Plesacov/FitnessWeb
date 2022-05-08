@@ -15,6 +15,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FitnessProgramComponent } from './components/fitness-program/fitness-program.component';
 import { FitnessProgramResolver } from './components/fitness-program/fitness-program.resolve';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { FitnessProgramResolver } from './components/fitness-program/fitness-pro
     HoverMenuComponent,
     NavBarComponent,
     FitnessProgramComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -31,7 +36,9 @@ import { FitnessProgramResolver } from './components/fitness-program/fitness-pro
     MatNativeDateModule,
     MaterialExampleModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ToastrModule,
+    ToastNoAnimationModule.forRoot(),
   ],
   providers: [FitnessProgramService,FitnessProgramResolver],
   bootstrap: [AppComponent],

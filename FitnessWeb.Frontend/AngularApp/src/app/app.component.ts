@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
+import { AuthenticationService } from 'src/services/authentication.service';
 import { FitnessProgramService } from 'src/services/fitnessProgram.service';
 import { FitnessProgramViewModel } from 'src/viewModels/fitnessProgramViewModel';
 import { Link } from './components/nav-bar/nav-bar.component';
@@ -11,13 +12,17 @@ import { Link } from './components/nav-bar/nav-bar.component';
   providers: [FitnessProgramService]
 })
 export class AppComponent {
-  links: Link[] = [
-    {name: 'Sign In', routerLink: '/signin'},
-    {name: 'Sign Up', routerLink: '/signup'},
-    {name: 'About', routerLink: '/about'}];
+  links: Link[] = !this._authService.isLoggedIn() ?
+    [
+      { name: 'Sign In', routerLink: '/signin' },
+      { name: 'Sign Up', routerLink: '/signup' },
+      { name: 'About', routerLink: '/about' }]
+    : [
+      { name: 'About', routerLink: '/about' }];
+
   fitnessProgram!: FitnessProgramViewModel;
   title = 'AngularApp';
-  constructor(){
+  constructor(private _authService: AuthenticationService) {
   }
 
 }

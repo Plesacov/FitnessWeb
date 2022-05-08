@@ -5,3 +5,11 @@
     margin-right: auto;
     margin-top: 200px;
 }
+
+mat-form-field {
+    margin-right: 12px;
+}
+
+em {
+    color: red;
+}
