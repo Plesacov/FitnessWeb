@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace FitnessWeb.Models
 {
-    public class FitnessTip : BaseEntity 
-    {
+    public class FitnessTip    {
+
+        public int Id { get; set; }
         [Required]
         [MaxLength(20)]
         public string Name { get; set; }

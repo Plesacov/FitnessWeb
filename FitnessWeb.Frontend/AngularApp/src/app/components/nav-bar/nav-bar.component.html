@@ -1,26 +1,27 @@
 <div class="nav-bar">
     <mat-toolbar>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <button style="outline: 0px;" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
             <!-- #docregion mat-menu-trigger-for -->
             <mat-icon mat-button [matMenuTriggerFor]="menu">menu</mat-icon>
             <!-- #enddocregion mat-menu-trigger-for -->
             <mat-menu #menu="matMenu">
-                <button routerLink="{{item.routerLink}}" mat-menu-item *ngFor="let item of links">
+                <button style="outline: 0px;" routerLink="{{item.routerLink}}" mat-menu-item *ngFor="let item of links">
                     {{ item.name }}
                 </button>
             </mat-menu>
         </button>
         <mat-icon aria-hidden="false" aria-label="Example home icon" routerLink="/home">home</mat-icon>
         <span class="example-spacer"></span>
-        <div class="links">
+        <div *ngIf="!isAdmin" class="links">
             <nav style="display: flex;">
                 <hover-menu></hover-menu>
             </nav>
         </div>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with person icon">
+        <button *ngIf="!isAdmin" style="outline: 0px;" routerLink="/page" mat-icon-button class="example-icon favorite-icon"
+            aria-label="Example icon-button with person icon">
             <mat-icon>person</mat-icon>
         </button>
-        <button mat-icon-button class="example-icon favorite-icon" (click)="logout()">
+        <button style="outline: 0px;" *ngIf="isUserLoggedIn" mat-icon-button class="example-icon favorite-icon" (click)="logout()">
             <mat-icon>logout</mat-icon>
         </button>
     </mat-toolbar>

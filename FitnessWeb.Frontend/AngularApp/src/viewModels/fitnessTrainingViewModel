@@ -1,0 +1,25 @@
+export class FitnessTrainingViewModel{
+    type : string;
+    exercises: ExerciseViewModel[];
+    duration: number;
+    fitnessProgramName: string;
+
+    constructor(type: string, exercises: ExerciseViewModel[], duration: number, fitnessProgramName: string){
+        this.type = type;
+        this.exercises = exercises;
+        this.duration = duration;
+        this.fitnessProgramName = fitnessProgramName;
+    }
+
+}
+export class ExerciseViewModel{
+    name: string
+    countOfRepeats: number
+    videoUrl: string
+
+    constructor(name: string,countOfRepeats: number, videoUrl: string ){
+        this.name = name;
+        this.countOfRepeats = countOfRepeats;
+        this.videoUrl = videoUrl;
+    }
+}

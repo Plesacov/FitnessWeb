@@ -108,6 +108,32 @@ namespace Fitness.Infrastracture.Migrations
                     b.ToTable("FitnessType");
                 });
 
+            modelBuilder.Entity("Fitness.Core.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte[]>("ImageData")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("FitnessWeb.Models.Achievement", b =>
                 {
                     b.Property<int>("Id")
@@ -273,10 +299,13 @@ namespace Fitness.Infrastracture.Migrations
                     b.Property<int>("FitnessLevel")
                         .HasColumnType("int");
 
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
                     b.Property<int>("Height")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("IsVip")
+                    b.Property<bool>("IsAdmin")
                         .HasColumnType("bit");
 
                     b.Property<string>("LastName")
@@ -333,6 +362,9 @@ namespace Fitness.Infrastracture.Migrations
                     b.Property<int>("FitnessProgramId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsCurrent")
+                        .HasColumnType("bit");
+
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
 
@@ -374,6 +406,17 @@ namespace Fitness.Infrastracture.Migrations
                     b.HasIndex("FitnessProgramId");
 
                     b.ToTable("Training");
+                });
+
+            modelBuilder.Entity("Fitness.Core.Models.Image", b =>
+                {
+                    b.HasOne("FitnessWeb.Models.Person", "Person")
+                        .WithMany("Images")
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
                 });
 
             modelBuilder.Entity("FitnessWeb.Models.Achievement", b =>
@@ -490,6 +533,8 @@ namespace Fitness.Infrastracture.Migrations
             modelBuilder.Entity("FitnessWeb.Models.Person", b =>
                 {
                     b.Navigation("Achievements");
+
+                    b.Navigation("Images");
 
                     b.Navigation("PersonFitnessPrograms");
                 });

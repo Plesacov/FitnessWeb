@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-
+  agree!: boolean;
   public registerForm!: FormGroup;
   maxDate: Date = new Date();
   private _returnUrl!: string;
@@ -27,6 +27,8 @@ export class SignUpComponent implements OnInit {
       birthdate: new FormControl('', Validators.required),
       weight: new FormControl('', [Validators.required]),
       height: new FormControl('', Validators.required),
+      gender: new FormControl('', Validators.required),
+      agree: new FormControl('', Validators.required),
     });
 
     this.maxDate = new Date();
@@ -51,6 +53,7 @@ export class SignUpComponent implements OnInit {
       birthdate: formValues.birthdate,
       weight: formValues.weight,
       height: formValues.height,
+      gender: formValues.gender
     };
     console.log(user);
     this._authService.registerUser("api/accounts/Registration", user)

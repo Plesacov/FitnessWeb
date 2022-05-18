@@ -29,8 +29,8 @@ header {
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
-    position: relative;
     margin: auto;
+    position: static;
   }
   
   /* Next & previous buttons */

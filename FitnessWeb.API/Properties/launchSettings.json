@@ -11,7 +11,6 @@
   "profiles": {
     "FitnessWeb.API": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7271;http://localhost:5271",

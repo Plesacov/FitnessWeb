@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace FitnessWeb.Models
 {
-    public class FitnessProgram : BaseEntity
+    public class FitnessProgram
+
     {
+        public int Id { get; set; }
         public List<Training> Trainings { get; set; }
         public List<FitnessTip> FitnessTips { get; set; }
         public List<PersonFitnessProgram> PersonFitnessPrograms { get; set; }

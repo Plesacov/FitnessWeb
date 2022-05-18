@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace Fitness.Infrastracture
 {
-    public interface IRepository<T> where T : BaseEntity
+    public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
         T GetById(object id);
@@ -11,7 +11,7 @@ namespace Fitness.Infrastracture
         void Update(T obj);
         void Delete(object id);
         IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate);
-        IEnumerable<T> GetWithInclude(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] paths);
+        IEnumerable<T> GetWithInclude(Expression<Func<T, bool>>? predicate, params Expression<Func<T, object>>[] paths);
         void Save();
 
     }

@@ -23,5 +23,5 @@ export class HoverMenuComponent implements OnInit {
         this.router.onSameUrlNavigation = 'reload';
         this.router.navigate([currentUrl]);
       }
+    }
   }
-}

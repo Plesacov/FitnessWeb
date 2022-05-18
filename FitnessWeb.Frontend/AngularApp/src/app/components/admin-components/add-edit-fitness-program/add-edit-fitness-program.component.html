@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h1 *ngIf="fitnessType.id == 0" mat-dialog-title>Create Fitness Program</h1>
+<h1 *ngIf="fitnessType.id != 0" mat-dialog-title>Edit Fitness Program</h1>
+<div mat-dialog-content>
+    <form [formGroup]="addOrEditForm" autocomplete="off" (ngSubmit)="createOrEditProgram(addOrEditForm.value)">
+        <div class="form-group row">
+            <label for="name" class="col-form-label col-sm-2">Name:</label>
+            <input type="text" id="name" formControlName="name" class="form-control" [(ngModel)]="fitnessType.name"/>
+            <div class="col-md-5">
+                <em *ngIf="validateControl('name') && hasError('name', 'required')">Name is required</em>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="description" class="col-form-label col-sm-2">Description:</label>
+            <textarea  type="description" id="description" formControlName="description" class="form-control"  [(ngModel)]="fitnessType.description">
+            </textarea>
+            <div class="col-md-5">
+                <em *ngIf="validateControl('description') && hasError('description', 'required')">Description is
+                    required</em>
+            </div>
+        </div>
+        <br>
+        <div mat-dialog-actions>
+            <button style="outline: 0px;" mat-flat-button (click)="onNoClick()">No Thanks</button>
+            <button type="submit" style="outline: 0px;" mat-flat-button cdkFocusInitial>Ok</button>
+        </div>
+    </form>
+</div>

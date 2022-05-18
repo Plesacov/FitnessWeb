@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace FitnessWeb.Models
 {
-    public class Achievement : BaseEntity
+    public class Achievement
     {
+        public int Id { get; set; }
         public Person Person { get; set; }
         public int PersonId { get; set; }
         public  List<Award> Awards { get; set; }

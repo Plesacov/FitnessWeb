@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-4 col-lg-4">
+            <app-upload-image></app-upload-image>
+        </div>
+        <div class="col-md-8 col-lg-8">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row justify-content-between align-items-center p-5 bg-dark text-white">
+                    <h3 class="display-5">{{person?.firstName}} {{person?.lastName}}</h3><i
+                        class="fa fa-facebook"></i><i class="fa fa-google"></i><i class="fa fa-youtube-play"></i><i
+                        class="fa fa-dribbble"></i><i class="fa fa-linkedin"></i>
+                </div>
+                <div class="p-3 bg-black text-white">
+                    <h5>Current fitness program: {{person?.currentFitnessProgram?.type?.name}}</h5>
+                    <h6>{{person?.currentFitnessProgram?.type?.description}}</h6>
+                </div>
+                <div class="p-3 bg-white text-black">
+                    <h5>Gender: {{person?.gender}}</h5>
+                </div>
+                <div class="d-flex flex-row text-white">
+                    <div class="p-4 bg-primary text-center skill-block">
+                        <h6>Height</h6>
+                        <h6>{{person?.height}}</h6>
+                    </div>
+                    <div class="p-3 bg-success text-center skill-block">
+                        <h6>Weight</h6>
+                        <h6>{{person?.weight}}</h6>
+                    </div>
+                    <div class="p-3 bg-purple text-center skill-block">
+                        <h6>Fitness Level</h6>
+                        <h6>{{person?.fitnessLevel}}</h6>
+                    </div>
+                </div>
+                <button *ngIf="person?.currentFitnessProgram == null" mat-flat-button (click)="openDialog()">
+                    <mat-icon>directions_run</mat-icon>
+                    Get Fitness Program
+                </button>
+                <button *ngIf="person?.currentFitnessProgram != null" mat-flat-button (click)="openDialog()">
+                    <mat-icon>directions_run</mat-icon>
+                    Change Fitness Program
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<h1 *ngIf="person?.currentFitnessProgram?.fitnessTips != null" style="margin-left: 20px">Fitness Tips for {{person?.currentFitnessProgram?.type?.name}}:</h1>
+<section class="sectionTips">
+    <article *ngFor="let fitnessTip of person?.currentFitnessProgram?.fitnessTips">
+        <h1>{{fitnessTip.name}}</h1>
+        <p>{{fitnessTip.description}}</p>
+    </article>
+</section>

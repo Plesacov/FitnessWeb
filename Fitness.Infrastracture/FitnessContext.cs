@@ -30,12 +30,14 @@ namespace Fitness.Infrastracture
         public virtual DbSet<Award> Award { get; set; }
         public virtual DbSet<Achievement> Achievement { get; set; }
         public virtual DbSet<FitnessType> FitnessType { get; set; }
+        public DbSet<Image> Images { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("Server=DESKTOP-08EE0M4;DataBase=FitnessApplication;Trusted_Connection=True; MultipleActiveResultSets=true");
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

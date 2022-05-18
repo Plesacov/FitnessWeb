@@ -19,5 +19,7 @@ namespace FitnessWeb.API.Identity
         public int Height { get; set; }
         [Required]
         public int Weight { get; set; }
+
+        public string Gender { get; set; }
     }
 }

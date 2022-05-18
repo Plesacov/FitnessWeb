@@ -167,3 +167,9 @@ C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\Microsoft.A
 C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
 C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\Users\tarza\GITTestRepo\FitnessWeb\Fitness.Tests\bin\Debug\net6.0\System.Memory.Data.dll

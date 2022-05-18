@@ -1,4 +1,5 @@
-﻿using Fitness.Infrastracture;
+﻿using Fitness.Core.Models;
+using Fitness.Infrastracture;
 using FitnessWeb.API.Commands;
 using FitnessWeb.Models;
 using MediatR;
@@ -7,18 +8,18 @@ namespace FitnessWeb.API.CommandHandlers
 {
     public class DeleteFitnessProgramCommandHandler : IRequestHandler<DeleteFitnessProgramCommand, Unit>
     {
-        private readonly IRepository<FitnessProgram> fitnessProgramRepository;
-        public DeleteFitnessProgramCommandHandler(IRepository<FitnessProgram> fitnessProgramRepository)
+        private readonly IRepository<FitnessType> fitnessTypeRepository;
+        public DeleteFitnessProgramCommandHandler(IRepository<FitnessType> fitnessProgramRepository)
         {
-            this.fitnessProgramRepository = fitnessProgramRepository;
+            this.fitnessTypeRepository = fitnessProgramRepository;
         }
         public Task<Unit> Handle(DeleteFitnessProgramCommand request, CancellationToken cancellationToken)
         {
-            var fitnessProgram = this.fitnessProgramRepository.GetById(request.Id);
+            var fitnessProgram = this.fitnessTypeRepository.GetById(request.Id);
             if(fitnessProgram != null)
             {
-                fitnessProgramRepository.Delete(fitnessProgram.Id);
-                fitnessProgramRepository.Save();
+                fitnessTypeRepository.Delete(fitnessProgram.FitnessProgramId);
+                fitnessTypeRepository.Save();
             }
             return Task.FromResult(new Unit());
         }

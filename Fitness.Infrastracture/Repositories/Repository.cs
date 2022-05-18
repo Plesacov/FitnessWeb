@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace Fitness.Infrastracture
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : class
     {
         private FitnessContext _context = null;
         private DbSet<T> table = null;
@@ -19,7 +19,7 @@ namespace Fitness.Infrastracture
             table = _context.Set<T>();
         }
 
-        public IEnumerable<T> GetWithInclude(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] paths)
+        public IEnumerable<T> GetWithInclude(Expression<Func<T, bool>>? predicate, params Expression<Func<T, object>>[] paths)
         {
             IQueryable<T> queryable = this.table.Where(predicate);
             if (paths != null)

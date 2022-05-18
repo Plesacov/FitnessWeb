@@ -3,6 +3,7 @@
 body { 
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
+
 }
 
 .basic-container {
@@ -12,4 +13,8 @@ body {
 .version-info {
   font-size: 8pt;
   float: right;
+}
+
+.mat-button{
+  outline: 0px;
 }

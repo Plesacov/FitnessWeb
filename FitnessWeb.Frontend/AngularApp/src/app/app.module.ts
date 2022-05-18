@@ -17,7 +17,16 @@ import { FitnessProgramComponent } from './components/fitness-program/fitness-pr
 import { FitnessProgramResolver } from './components/fitness-program/fitness-program.resolve';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
+import { ToastrModule, ToastNoAnimationModule } from 'ngx-toastr';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
+import { UploadImagesComponent } from './components/upload-image/upload-image.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { FitnessProgramTableComponent } from './components/admin-components/fitness-program-table/fitness-program-table.component';
+import { MatSortModule } from '@angular/material/sort';
+import { AddEditFitnessProgramComponent } from './components/admin-components/add-edit-fitness-program/add-edit-fitness-program.component';
+
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { FitnessTipProgramTableComponent } from './components/admin-components/fitness-tip-program-table/fitness-tip-program-table.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +35,13 @@ import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toas
     NavBarComponent,
     FitnessProgramComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProfilePageComponent,
+    UploadImagesComponent,
+    DialogComponent,
+    FitnessProgramTableComponent,
+    AddEditFitnessProgramComponent,
+    FitnessTipProgramTableComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -39,8 +54,14 @@ import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toas
     AppRoutingModule,
     ToastrModule,
     ToastNoAnimationModule.forRoot(),
+    MatSortModule,
+    MatDialogModule
   ],
-  providers: [FitnessProgramService,FitnessProgramResolver],
+  providers: [FitnessProgramService, FitnessProgramResolver,
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

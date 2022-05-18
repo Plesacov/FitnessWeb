@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Fitness.Core.Models
 {
-    public class Admin : IdentityUser, IUser
+    public class Admin : IdentityUser
     {
         public int Id { get; set; }
     }

@@ -1,0 +1,56 @@
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.bg-black {
+    background: #000;
+}
+
+.skill-block {
+    width: 50%;
+}
+
+@media (min-width: 991px) and (max-width:1200px) {
+    .skill-block {
+        padding: 32px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .skill-block {
+        padding: 56px !important;
+    }
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.container {
+    margin-top: 200px;
+}
+
+section {
+    display: table;
+}
+
+.bg-purple {
+    background-color: #343a40;
+}
+
+.sectionTips {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+}
+
+article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    margin-top: 30px;
+}

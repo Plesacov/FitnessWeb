@@ -1,5 +1,9 @@
-import { BaseCommand } from "./baseCommandWithId";
+export class DeleteFitnessProgramCommand{
+    name: string;
+    description: string;
 
-export class DeleteFitnessProgramCommand extends BaseCommand{
-    
+    constructor (name: string, description: string){
+        this.name = name;
+        this.description = description;
+    }
 }

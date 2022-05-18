@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 namespace Fitness.Core.Models
 {
     
-    public class FitnessType : BaseEntity
+    public class FitnessType
     {
+
+        public int Id { get; set; }
         [Timestamp]
         public byte[] Timestamp { get; set; }
 

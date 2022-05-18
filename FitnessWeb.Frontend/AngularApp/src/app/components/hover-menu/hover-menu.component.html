@@ -1,28 +1,31 @@
-<button style="font-size: larger;" mat-button [matMenuTriggerFor]="people">Person</button>
+<button style="font-size: larger; outline: 0px;" mat-button [matMenuTriggerFor]="people">
+    <mat-icon>fitness_center</mat-icon>
+    Fitness menu
+</button>
 
 <mat-menu #people="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="man">Man</button>
-    <button mat-menu-item [matMenuTriggerFor]="woman">Woman</button>
-    <button mat-menu-item [matMenuTriggerFor]="child">Child</button>
+    <button style="outline: 0px;" mat-menu-item [matMenuTriggerFor]="man">Man</button>
+    <button style="outline: 0px;" mat-menu-item [matMenuTriggerFor]="woman">Woman</button>
+    <button style="outline: 0px;" mat-menu-item [matMenuTriggerFor]="child">Child</button>
 </mat-menu>
 
 <mat-menu #man="matMenu">
-    <button routerLink="/fitnessProgram/17" mat-menu-item>Tabata 30'</button>
-    <button routerLink="/fitnessProgram/15" mat-menu-item>Power Program</button>
-    <button routerLink="/fitnessProgram/20" mat-menu-item>Football Program</button>
-    <button routerLink="/fitnessProgram/21" mat-menu-item>CrossFit</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/17" mat-menu-item>Tabata 30'</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/15" mat-menu-item>Power Program</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/20" mat-menu-item>Football Program</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/21" mat-menu-item>CrossFit</button>
 </mat-menu>
 
 <mat-menu #woman="matMenu">
-    <button routerLink="/fitnessProgram/22" mat-menu-item>Running</button>
-    <button routerLink="/fitnessProgram/23" mat-menu-item>Dance Mix</button>
-    <button routerLink="/fitnessProgram/24" mat-menu-item>Pilates</button>
-    <button routerLink="/fitnessProgram/25" mat-menu-item>Stretching</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/22" mat-menu-item>Running</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/23" mat-menu-item>Dance Mix</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/24" mat-menu-item>Pilates</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/25" mat-menu-item>Stretching</button>
 </mat-menu>
 
 <mat-menu #child="matMenu">
-    <button routerLink="/fitnessProgram/26" mat-menu-item>Super ABS</button>
-    <button routerLink="/fitnessProgram/27" mat-menu-item>Taekwondo</button>
-    <button routerLink="/fitnessProgram/28" mat-menu-item>TRX</button>
-    <button routerLink="/fitnessProgram/29" mat-menu-item>Swimming</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/26" mat-menu-item>Super ABS</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/27" mat-menu-item>Taekwondo</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/28" mat-menu-item>TRX</button>
+    <button style="outline: 0px;" routerLink="/fitnessProgram/29" mat-menu-item>Swimming</button>
 </mat-menu>

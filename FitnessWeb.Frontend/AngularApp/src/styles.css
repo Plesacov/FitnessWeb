@@ -1,9 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@use "@material/checkbox"; 
+@use "@material/icon-button"; 
+@use "@material/data-table/data-table";
+
+@include checkbox.core-styles;
+@include icon-button.core-styles;
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+
+
 
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     margin: 0;
+    background: rgb(116,112,112);
+    background: linear-gradient(90deg, rgba(116,112,112,1) 0%, rgba(184,220,243,1) 47%, rgba(73,72,72,1) 100%);
   }
   
   html, body {

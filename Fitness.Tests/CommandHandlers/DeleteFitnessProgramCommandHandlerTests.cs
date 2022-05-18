@@ -1,4 +1,5 @@
-﻿using Fitness.Infrastracture;
+﻿using Fitness.Core.Models;
+using Fitness.Infrastracture;
 using FitnessWeb.API.CommandHandlers;
 using FitnessWeb.API.Commands;
 using FitnessWeb.Models;
@@ -12,10 +13,10 @@ namespace Fitness.Tests.CommandHandlers
     [TestClass]
     public class DeleteFitnessProgramCommandHandlerTests
     {
-        private Mock<IRepository<FitnessProgram>> fitnessProgramRepository;
+        private Mock<IRepository<FitnessType>> fitnessProgramRepository;
         public DeleteFitnessProgramCommandHandlerTests()
         {
-            this.fitnessProgramRepository = new Mock<IRepository<FitnessProgram>>();
+            this.fitnessProgramRepository = new Mock<IRepository<FitnessType>>();
         }
         [TestMethod]
         public void Given_DeleteFitnessProgramCommand_WhenHandle()
@@ -26,7 +27,7 @@ namespace Fitness.Tests.CommandHandlers
             {
                 Id = 1,
             };
-            FitnessProgram fitnessProgram = new FitnessProgram() { Id = 1 };
+            FitnessType fitnessProgram = new FitnessType() { Id = 1 };
             this.fitnessProgramRepository
                 .Setup(fitnessProgramRepository => fitnessProgramRepository
                 .GetById(command.Id)).Returns(fitnessProgram);
