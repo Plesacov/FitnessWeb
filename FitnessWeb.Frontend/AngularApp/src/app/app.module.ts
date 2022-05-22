@@ -27,6 +27,11 @@ import { AddEditFitnessProgramComponent } from './components/admin-components/ad
 
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { FitnessTipProgramTableComponent } from './components/admin-components/fitness-tip-program-table/fitness-tip-program-table.component';
+import { AddEditFitnessTipComponent } from './components/admin-components/add-edit-fitness-tip/add-edit-fitness-tip.component';
+import { FitnessTrainingTableComponent } from './components/admin-components/fitness-training-table/fitness-training-table.component';
+import { AddEditFitnessTrainingComponent } from './components/admin-components/add-edit-fitness-training/add-edit-fitness-training.component';
+import { FitnessExerciseTableComponent } from './components/admin-components/fitness-exercise-table/fitness-exercise-table.component';
+import { AddEditFitnessExerciseComponent } from './components/admin-components/add-edit-fitness-exercise/add-edit-fitness-exercise.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +47,11 @@ import { FitnessTipProgramTableComponent } from './components/admin-components/f
     FitnessProgramTableComponent,
     AddEditFitnessProgramComponent,
     FitnessTipProgramTableComponent,
+    AddEditFitnessTipComponent,
+    FitnessTrainingTableComponent,
+    AddEditFitnessTrainingComponent,
+    FitnessExerciseTableComponent,
+    AddEditFitnessExerciseComponent
   ],
   imports: [
     BrowserAnimationsModule,

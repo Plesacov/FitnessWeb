@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h1 *ngIf="fitnessTraining.id == 0" mat-dialog-title>Create Fitness Training</h1>
+<h1 *ngIf="fitnessTraining.id != 0" mat-dialog-title>Edit Fitness Training</h1>
+<div mat-dialog-content>
+    <form [formGroup]="addOrEditForm" autocomplete="off" (ngSubmit)="createOrEditFitnessTraining(addOrEditForm.value)">
+        <div class="form-group row">
+            <label for="type" class="col-form-label col-sm-2">Type:</label>
+            <input type="text" id="type" formControlName="type" class="form-control" [(ngModel)]="fitnessTraining.type"/>
+            <div class="col-md-5">
+                <em *ngIf="validateControl('type') && hasError('type', 'required')">Type is required</em>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="duration" class="col-form-label">Duration:</label>
+            <input type="number" id="duration" formControlName="duration" class="form-control" [(ngModel)]="fitnessTraining.duration"/>
+            <em *ngIf="validateControl('duration') && hasError('duration', 'required')">Duration is required</em>
+        </div>
+        <mat-form-field *ngIf="fitnessTraining.id === 0" appearance="fill">
+            <mat-label>Fitness Program</mat-label>
+            <mat-select formControlName="fitnessType">
+                <mat-option *ngFor="let fitnessType of fitnessTypes" [value]="fitnessType.id">
+                    {{fitnessType.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <div mat-dialog-actions>
+            <button style="outline: 0px;" type="button" mat-flat-button (click)="onNoClick()">No Thanks</button>
+            <button type="submit" style="outline: 0px;" mat-flat-button cdkFocusInitial>Ok</button>
+        </div>
+    </form>
+</div>

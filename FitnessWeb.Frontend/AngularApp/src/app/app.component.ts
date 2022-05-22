@@ -27,7 +27,8 @@ export class AppComponent {
       this.links = [
         { name: 'Programs', routerLink: '/admin/fitnessPrograms' },
         { name: 'Fitness Tips', routerLink: '/admin/fitnessTips' },
-        { name: 'Trainings', routerLink: '/admin/fitnessTrainings' }];
+        { name: 'Trainings', routerLink: '/admin/fitnessTrainings' },
+        { name: 'Exercises', routerLink: '/admin/fitnessExercises' }];
     }
     else {
       this.links = [{ name: 'About', routerLink: '/about' }];

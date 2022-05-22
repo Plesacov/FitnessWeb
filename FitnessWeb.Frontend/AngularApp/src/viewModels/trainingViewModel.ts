@@ -1,9 +1,18 @@
-export class TrainingViewModel{
-    type: string;
-    duration: number;
+import { ExerciseViewModel } from "./exerciseViewModel";
 
-    constructor(duration: number, type: string) {
-        this.duration = duration;
+export class TrainingViewModel {
+    id: number;
+    type: string;
+    exercises: ExerciseViewModel[];
+    duration: number;
+    fitnessProgramName: string;
+
+    constructor(type: string, exercises: ExerciseViewModel[], duration: number, fitnessProgramName: string, id: number) {
+        this.id = id;
         this.type = type;
+        this.exercises = exercises;
+        this.duration = duration;
+        this.fitnessProgramName = fitnessProgramName;
     }
+
 }

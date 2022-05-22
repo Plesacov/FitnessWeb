@@ -20,7 +20,7 @@ namespace FitnessWeb.API.QueryHandlers
         }
         public Task<PagedCollectionResponse<TrainingViewModel>> Handle(FitnessTrainingsQuery request, CancellationToken cancellationToken)
         {
-            var propertyInfo = typeof(FitnessTip);
+            var propertyInfo = typeof(Training);
             var property = propertyInfo.GetProperty(request.Filter.SortedField ?? "Type");
             var fitnessTrainings = this.fitnesTrainingRepository.GetWithInclude(x => x.FitnessProgram != null, x => x.FitnessProgram, x => x.FitnessProgram.FitnessType);
 
@@ -31,11 +31,9 @@ namespace FitnessWeb.API.QueryHandlers
                     : fitnessTrainings.OrderByDescending(p => property.GetValue(p)).ToList();
                 return Task.FromResult(PagedCollectionResponse<TrainingViewModel>.Create(fitnessTrainings, request.Filter, (p) => mapper.Map<TrainingViewModel>(p)));
             }
-            else
-            {
-                fitnessTrainings = fitnessTrainings.Where(u => u.Type.ToLower().StartsWith(request.Filter.Term)).ToList();
-                fitnessTrainings = request.Filter.SortAsc ? fitnessTrainings.OrderBy(p => property.GetValue(p)).ToList() : fitnessTrainings.OrderByDescending(p => property.GetValue(p)).ToList();
-            }
+
+            fitnessTrainings = fitnessTrainings.Where(u => u.Type.ToLower().StartsWith(request.Filter.Term) || u.Duration.ToString().StartsWith(request.Filter.Term)).ToList();
+            fitnessTrainings = request.Filter.SortAsc ? fitnessTrainings.OrderBy(p => property.GetValue(p)).ToList() : fitnessTrainings.OrderByDescending(p => property.GetValue(p)).ToList();
 
             var result = PagedCollectionResponse<TrainingViewModel>.Create(fitnessTrainings, request.Filter, (p) => mapper.Map<TrainingViewModel>(p));
             return Task.FromResult(result);

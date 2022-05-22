@@ -1,0 +1,65 @@
+<h1>Fitness Exercises</h1>
+<div class="table-container">
+    <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Tabata" #input>
+    </mat-form-field>
+    <span>Create new Fitness Exercise</span>
+    <button class="createButton" mat-mini-fab style="margin-right:10px; margin-bottom: 10px;" (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+    <div style="background-color: white" class="mat-elevation-z8">
+        <table mat-table [dataSource]="fitnessExercises" matSort (matSortChange)="sortData($event)" matSortActive="name"
+            matSortDirection="asc" matSortDisableClear>
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th style="width: 10%;" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td style="width: 10%;" mat-cell *matCellDef="let row"> {{row.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="countOfRepeats">
+                <th style="width: 7%;" mat-header-cell *matHeaderCellDef mat-sort-header> Count of Repeats </th>
+                <td style="width: 7%;" mat-cell *matCellDef="let row"> {{row.countOfRepeats}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="fitnessTrainingName">
+                <th style="width: 7%; margin-left: 5px;" mat-header-cell *matHeaderCellDef mat-sort-header> Fitness
+                    Training Type </th>
+                <td style="width: 7%; margin-left: 5px;" mat-cell *matCellDef="let row"> {{row.trainingName}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="videoUrl">
+                <th style="width: 7%; margin-left: 5px;" mat-header-cell *matHeaderCellDef mat-sort-header> Video URL
+                    Training Type </th>
+                <td style="width: 7%; margin-left: 5px;" mat-cell *matCellDef="let row"> {{row.videoUrl}}
+                </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="actions">
+                <th style="width: 5%; text-align: center; vertical-align: middle;" mat-header-cell *matHeaderCellDef
+                mat-sort-header></th>
+                <td style="width: 5%; text-align: center; vertical-align: middle;" mat-cell *matCellDef="let row">
+                    <button class="editButton" mat-mini-fab (click)="openDialog(row)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="deleteButton" mat-mini-fab (click)="deleteFitnessExercise(row.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data</td>
+            </tr>
+        </table>
+        <mat-spinner style="margin:0 auto; background-color: white;" *ngIf="fitnessExercises == null"></mat-spinner> 
+        <mat-paginator #paginator [length]="pagedResponse?.totalItemsCount" [pageIndex]="pagedResponse?.currentPage"
+            [pageSizeOptions]="[5, 10, 25, 50]" pageSize="5" (page)="onPageChange($event)">
+        </mat-paginator>
+    </div>
+</div>

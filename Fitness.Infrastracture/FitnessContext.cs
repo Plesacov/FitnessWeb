@@ -20,9 +20,8 @@ namespace Fitness.Infrastracture
         {
 
         }
-        public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Person> Person { get; set; }
-        public virtual DbSet<Exercise> Exercise { get; set; }
+        public virtual DbSet<Training> Exercise { get; set; }
         public virtual DbSet<FitnessProgram> FitnessProgram { get; set; }
         public virtual DbSet<FitnessTip> FitnessTip { get; set; }
         public virtual DbSet<Training> Training { get; set; }

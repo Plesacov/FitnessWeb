@@ -3,7 +3,10 @@
 <div class="container">
     <div class="row no-gutters">
         <div class="col-md-4 col-lg-4">
-            <app-upload-image></app-upload-image>
+            <img *ngIf="person?.gender !== 'Female'"
+                src="https://www.kindpng.com/picc/m/24-248729_stockvader-predicted-adig-user-profile-image-png-transparent.png">
+            <img *ngIf="person?.gender === 'Female'"
+                src="https://mpng.subpng.com/20180504/phe/kisspng-professional-computer-icons-avatar-job-5aec571ec854c8.3222584415254382388206.jpg">
         </div>
         <div class="col-md-8 col-lg-8">
             <div class="d-flex flex-column">
@@ -45,10 +48,36 @@
         </div>
     </div>
 </div>
-<h1 *ngIf="person?.currentFitnessProgram?.fitnessTips != null" style="margin-left: 20px">Fitness Tips for {{person?.currentFitnessProgram?.type?.name}}:</h1>
+<h1 style="margin-left: 20px">Fitness Tips for
+    {{person?.currentFitnessProgram?.type?.name}}:</h1>
 <section class="sectionTips">
     <article *ngFor="let fitnessTip of person?.currentFitnessProgram?.fitnessTips">
         <h1>{{fitnessTip.name}}</h1>
         <p>{{fitnessTip.description}}</p>
     </article>
 </section>
+<br>
+<h1 style="margin-left: 20px">Trainings: </h1>
+<div *ngFor="let fitnessTraining of person?.currentFitnessProgram?.trainings">
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{fitnessTraining.type}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+            <h3 style="text-align: center;">Duration: {{fitnessTraining.duration}}</h3>
+            <div class="list">
+                <ul *ngFor="let fitnessExercise of fitnessTraining.exercises">
+                    <li>{{fitnessExercise.name}}
+                        <h6>Repeats: {{fitnessExercise.countOfRepeats}}</h6>
+                    </li>
+                    <div style="overflow-x: scroll;">
+                        <video playsinline="playsinline" autoplay="autoplay" [muted]="true" loop="loop"
+                            src="{{fitnessExercise.videoUrl}}"></video>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</div>

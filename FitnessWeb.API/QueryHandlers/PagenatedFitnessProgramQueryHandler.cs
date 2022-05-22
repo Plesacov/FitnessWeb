@@ -28,12 +28,12 @@ namespace FitnessWeb.API.QueryHandlers
                     ? fitnessTypes.OrderBy(p => property.GetValue(p)).ToList()
                     : fitnessTypes.OrderByDescending(p => property.GetValue(p)).ToList();
                 var fitnessTypesViewModels = mapper.Map<List<FitnessTypeViewModel>>(fitnessTypes);
+
+                return Task.FromResult(PagedCollectionResponse<FitnessTypeViewModel>.Create(fitnessTypes, request.Filter, (p) => mapper.Map<FitnessTypeViewModel>(p)));
             }
-            else
-            {
-                fitnessTypes = fitnessTypes.Where(u => u.Name.ToLower().StartsWith(request.Filter.Term) || u.Description.ToLower().StartsWith(request.Filter.Term)).ToList();
-                fitnessTypes = request.Filter.SortAsc ? fitnessTypes.OrderBy(p => property.GetValue(p)).ToList() : fitnessTypes.OrderByDescending(p => property.GetValue(p)).ToList();
-            }
+
+            fitnessTypes = fitnessTypes.Where(u => u.Name.ToLower().StartsWith(request.Filter.Term) || u.Description.ToLower().StartsWith(request.Filter.Term)).ToList();
+            fitnessTypes = request.Filter.SortAsc ? fitnessTypes.OrderBy(p => property.GetValue(p)).ToList() : fitnessTypes.OrderByDescending(p => property.GetValue(p)).ToList();
 
             var result = PagedCollectionResponse<FitnessTypeViewModel>.Create(fitnessTypes, request.Filter, (p) => mapper.Map<FitnessTypeViewModel>(p));
             return Task.FromResult(result);

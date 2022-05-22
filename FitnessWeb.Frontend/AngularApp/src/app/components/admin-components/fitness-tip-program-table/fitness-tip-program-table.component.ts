@@ -8,6 +8,7 @@ import { FitnessProgramService } from 'src/services/fitnessProgram.service';
 import { FitnessTipViewModel } from 'src/viewModels/fitnessTipViewModel';
 import { FilterModel, PageCollectionResponse } from 'src/viewModels/pageCollectionResponse';
 import { AddEditFitnessProgramComponent } from '../add-edit-fitness-program/add-edit-fitness-program.component';
+import { AddEditFitnessTipComponent } from '../add-edit-fitness-tip/add-edit-fitness-tip.component';
 
 @Component({
   selector: 'app-fitness-tip-program-table',
@@ -81,27 +82,23 @@ export class FitnessTipProgramTableComponent implements AfterViewInit {
   openDialog(fitnessTipViewModel?: FitnessTipViewModel) {
     const dialogConfig = new MatDialogConfig();
 
-    // if(fitnessTipViewModel != null){
-    //   dialogConfig.data = {
-    //       fitnessTypeViewModel: fitnessTipViewModel
-    //   };
-    // }
-    // this.dialog.open(AddEditFitnessProgramComponent, dialogConfig);
-
-    //todo: create new dialog for tips
+    if(fitnessTipViewModel != null){
+      dialogConfig.data = {
+        fitnessTipViewModel: fitnessTipViewModel
+      };
+    }
+    this.dialog.open(AddEditFitnessTipComponent, dialogConfig);
 
   }
   public deleteFitnessTip = (id: number) => {
-      // this.fitnessProgramService.deleteFitnessProgram(id).subscribe
-      //   (() => {
-      //     this.showSuccess('Deleted successfull');
-      //     this.refresh();
-      //   },
-      //     () => {
-      //       this.toastr.error("IT Error");
-      //     })
-
-      //todo: delete fitness tip
+      this.fitnessProgramService.deleteFitnessTip(id).subscribe
+        (() => {
+          this.showSuccess('Deleted successfull');
+          this.refresh();
+        },
+          () => {
+            this.toastr.error("IT Error");
+          })
     }
 
     showSuccess(message: string) {

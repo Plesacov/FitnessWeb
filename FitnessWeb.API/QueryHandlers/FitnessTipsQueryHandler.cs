@@ -22,7 +22,7 @@ namespace FitnessWeb.API.QueryHandlers
         {
             var propertyInfo = typeof(FitnessTip);
             var property = propertyInfo.GetProperty(request.Filter.SortedField ?? "Name");
-            var fitnessTips = this.fitnesTipRepository.GetWithInclude(x => x.FitnessProgram != null,x => x.FitnessProgram, x => x.FitnessProgram.FitnessType);
+            var fitnessTips = this.fitnesTipRepository.GetWithInclude(x => x.FitnessProgram != null, x => x.FitnessProgram, x => x.FitnessProgram.FitnessType);
 
             if (string.IsNullOrEmpty(request.Filter.Term) || request.Filter.Term == "")
             {
@@ -30,12 +30,11 @@ namespace FitnessWeb.API.QueryHandlers
                     ? fitnessTips.OrderBy(p => property.GetValue(p)).ToList()
                     : fitnessTips.OrderByDescending(p => property.GetValue(p)).ToList();
                 var fitnessTipsViewModels = mapper.Map<List<FitnessTipViewModel>>(fitnessTips);
+                return Task.FromResult(PagedCollectionResponse<FitnessTipViewModel>.Create(fitnessTips, request.Filter, (p) => mapper.Map<FitnessTipViewModel>(p)));
             }
-            else
-            {
-                fitnessTips = fitnessTips.Where(u => u.Name.ToLower().StartsWith(request.Filter.Term) || u.Description.ToLower().StartsWith(request.Filter.Term)).ToList();
-                fitnessTips = request.Filter.SortAsc ? fitnessTips.OrderBy(p => property.GetValue(p)).ToList() : fitnessTips.OrderByDescending(p => property.GetValue(p)).ToList();
-            }
+
+            fitnessTips = fitnessTips.Where(u => u.Name.ToLower().StartsWith(request.Filter.Term) || u.Description.ToLower().StartsWith(request.Filter.Term)).ToList();
+            fitnessTips = request.Filter.SortAsc ? fitnessTips.OrderBy(p => property.GetValue(p)).ToList() : fitnessTips.OrderByDescending(p => property.GetValue(p)).ToList();
 
             var result = PagedCollectionResponse<FitnessTipViewModel>.Create(fitnessTips, request.Filter, (p) => mapper.Map<FitnessTipViewModel>(p));
             return Task.FromResult(result);

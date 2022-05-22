@@ -43,7 +43,7 @@ namespace FitnessWeb.API.Controllers
         [HttpDelete("deleteFitnessProgram/{id}")]
         public IActionResult DeleteFitnessProgram(int id)
         {
-            this.mediator.Send(new DeleteFitnessProgramCommand { Id = id});
+            this.mediator.Send(new DeleteFitnessProgramCommand { Id = id });
             return NoContent();
         }
 
@@ -61,7 +61,7 @@ namespace FitnessWeb.API.Controllers
         {
             Task<FitnessProgramViewModel> result = this.mediator.Send(new SearchByIdFitnessProgramQuery { Id = id });
 
-            if(result == null)
+            if (result == null)
             {
                 return BadRequest("Entity is not found");
             }
@@ -90,7 +90,7 @@ namespace FitnessWeb.API.Controllers
         [HttpPost("paginatedFitnessTypes")]
         public ActionResult<PagedCollectionResponse<FitnessTypeViewModel>> PaginatedFitnessTypes([FromBody] FilterModel filterModel)
         {
-            Task<PagedCollectionResponse<FitnessTypeViewModel>> result = this.mediator.Send(new PagenatedFitnessProgramQuery { Filter = filterModel});
+            Task<PagedCollectionResponse<FitnessTypeViewModel>> result = this.mediator.Send(new PagenatedFitnessProgramQuery { Filter = filterModel });
             return result.Result;
         }
 
@@ -101,10 +101,17 @@ namespace FitnessWeb.API.Controllers
             return result.Result;
         }
 
-        [HttpPost("paginatedFitnessTraining")]
+        [HttpPost("paginatedFitnessTrainings")]
         public ActionResult<PagedCollectionResponse<TrainingViewModel>> PaginatedFitnessTraining([FromBody] FilterModel filterModel)
         {
             Task<PagedCollectionResponse<TrainingViewModel>> result = this.mediator.Send(new FitnessTrainingsQuery { Filter = filterModel });
+            return result.Result;
+        }
+
+        [HttpPost("paginatedFitnessExercises")]
+        public ActionResult<PagedCollectionResponse<ExerciseViewModel>> PaginatedFitnessExercises([FromBody] FilterModel filterModel)
+        {
+            Task<PagedCollectionResponse<ExerciseViewModel>> result = this.mediator.Send(new FitnessExercisesQuery { Filter = filterModel });
             return result.Result;
         }
 
@@ -137,7 +144,7 @@ namespace FitnessWeb.API.Controllers
             return result.Result;
         }
 
-        [HttpPut("updateFitnessTrainig")]
+        [HttpPut("updateFitnessTraining")]
         [ApiExceptionFilter]
         public IActionResult UpdateFitnessTraining([FromBody] UpdateFitnessTrainingCommand command)
         {
@@ -150,6 +157,35 @@ namespace FitnessWeb.API.Controllers
         {
             this.mediator.Send(new DeleteFitnessTrainingCommand { Id = id });
             return NoContent();
+        }
+
+        [HttpPost("createNewExercise")]
+        public ActionResult<int> CreateNewExercise([FromBody] CreateFitnessExerciseCommand command)
+        {
+            Task<int> result = this.mediator.Send(command);
+            return result.Result;
+        }
+
+        [HttpPut("updateFitnessExercise")]
+        [ApiExceptionFilter]
+        public IActionResult UpdateFitnessExercise([FromBody] UpdateFitnessExerciseCommand command)
+        {
+            this.mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete("deleteFitnessExercise/{id}")]
+        public IActionResult DeleteFitnessExercise(int id)
+        {
+            this.mediator.Send(new DeleteFitnessExerciseCommand { Id = id });
+            return NoContent();
+        }
+
+        [HttpGet("getAllTrainings")]
+        public ActionResult<List<TrainingViewModel>> GetAllTrainings()
+        {
+            Task<List<TrainingViewModel>> result = this.mediator.Send(new GetAllTrainingsQuery());
+            return result.Result;
         }
     }
 }

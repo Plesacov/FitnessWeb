@@ -1,4 +1,4 @@
-<h1>Fitness Programs</h1>
+<h1>Fitness Tips</h1>
 <div class="table-container">
     <mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>
@@ -8,7 +8,7 @@
     <button class="createButton" mat-mini-fab style="margin-right:10px; margin-bottom: 10px;" (click)="openDialog()">
         <mat-icon>add</mat-icon>
     </button>
-    <div class="mat-elevation-z8">
+    <div style="background-color: white" class="mat-elevation-z8">
         <table mat-table [dataSource]="fitnessTips" matSort (matSortChange)="sortData($event)" matSortActive="name"
             matSortDirection="asc" matSortDisableClear>
             <!-- Name Column -->
@@ -25,13 +25,15 @@
 
             <!-- Fruit Column -->
             <ng-container matColumnDef="fitnessProgramName">
-                <th style="width: 7%; margin-left: 5px;" mat-header-cell *matHeaderCellDef mat-sort-header> Fitness Program Type </th>
-                <td style="width: 7%; margin-left: 5px;" mat-cell *matCellDef="let row"> {{row.fitnessProgramName}} </td>
+                <th style="width: 7%; margin-left: 5px;" mat-header-cell *matHeaderCellDef mat-sort-header> Fitness
+                    Program Type </th>
+                <td style="width: 7%; margin-left: 5px;" mat-cell *matCellDef="let row"> {{row.fitnessProgramName}}
+                </td>
             </ng-container>
-
+            
             <ng-container matColumnDef="actions">
                 <th style="width: 5%; text-align: center; vertical-align: middle;" mat-header-cell *matHeaderCellDef
-                    mat-sort-header></th>
+                mat-sort-header></th>
                 <td style="width: 5%; text-align: center; vertical-align: middle;" mat-cell *matCellDef="let row">
                     <button class="editButton" mat-mini-fab (click)="openDialog(row)">
                         <mat-icon>edit</mat-icon>
@@ -41,16 +43,16 @@
                     </button>
                 </td>
             </ng-container>
-
+            
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
+            
             <!-- Row shown when there is no matching data. -->
             <tr class="mat-row" *matNoDataRow>
                 <td class="mat-cell" colspan="4">No data</td>
             </tr>
         </table>
-
+        <mat-spinner style="margin:0 auto; background-color: white;" *ngIf="fitnessTips == null"></mat-spinner> 
         <mat-paginator #paginator [length]="pagedResponse?.totalItemsCount" [pageIndex]="pagedResponse?.currentPage"
             [pageSizeOptions]="[5, 10, 25, 50]" pageSize="5" (page)="onPageChange($event)">
         </mat-paginator>
