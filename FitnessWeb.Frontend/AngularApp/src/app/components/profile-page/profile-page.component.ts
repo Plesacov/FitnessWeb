@@ -11,9 +11,12 @@ import { Person } from './person';
   templateUrl: './profile-page.component.html',
   styleUrls: ['./profile-page.component.css']
 })
+
 export class ProfilePageComponent implements OnInit {
+  panelOpenState: boolean = false;
   person!: Person;
-  constructor(private _authService: AuthenticationService, public dialog: MatDialog, public fitnessProgramService: FitnessProgramService) { }
+  constructor(private _authService: AuthenticationService, public dialog: MatDialog, public fitnessProgramService: FitnessProgramService) {
+  }
 
   ngOnInit(): void {
     this._authService.getUserdata().subscribe((res: Person) => this.person = res);
@@ -23,5 +26,4 @@ export class ProfilePageComponent implements OnInit {
     this.dialog.open(DialogComponent, {
     });
   }
-  
 }
